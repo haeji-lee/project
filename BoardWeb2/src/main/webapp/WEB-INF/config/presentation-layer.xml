@@ -33,7 +33,7 @@
 	
 	<property name="basenames">
 		<list>
-		<value>message.messgeSource</value>
+		<value>message.messageSource</value>
 		</list>
 	</property>
 	</bean>
