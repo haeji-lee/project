@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -31,8 +33,9 @@ public class BoardController {
 		return conditionMap;
 	}
 	// 글 등록
-	@RequestMapping(value = "/insertBoard.do")
+	@RequestMapping(value = "/insertBoard.do", method=RequestMethod.POST)
 	public String insertBoard(BoardVO vo) throws Exception{
+		//System.out.println("version2 디버깅 ::: " + file);
 		MultipartFile uploadFile = vo.getUploadFile();
 		System.out.println("디버깅 ::: " +uploadFile);
 		if(!uploadFile.isEmpty()) {
@@ -44,7 +47,7 @@ public class BoardController {
 	}
 
 	// 글 수정
-	@RequestMapping("/updateBoard.do")
+	@RequestMapping(value="/updateBoard.do")
 	public String updateBoard(@ModelAttribute("board") BoardVO vo) {
 		System.out.println(" 작성자 이름 : " + vo.getWriter());
 		boardService.updateBoard(vo);
