@@ -41,7 +41,7 @@
 	</select>
 
 	<select id="getBoardList" resultMap="boardResult">
-	<![CDATA[
+
 		SELECT * from board 
 		where 1=1
 		<if test="searchCondition=='TITLE'">
@@ -51,7 +51,7 @@
 		  AND CONTENT LIKE '%'||#{searchKeyword}||'%'
 		</if>	
 		order by seq desc
-	]]>
+
 	</select>
 
 </mapper>
