@@ -5,7 +5,7 @@
     pageEncoding="EUC-KR"%>
     
 <%
-	/* TEST */
+	/* TEST */     
 	request.setCharacterEncoding("EUC-KR");
 	String title=request.getParameter("title");
 	String writer=request.getParameter("writer");
