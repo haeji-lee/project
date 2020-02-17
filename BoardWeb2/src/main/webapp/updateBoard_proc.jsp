@@ -3,7 +3,7 @@
 <%@page import="com.springbook.biz.board.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-    
+      
 <%
 	/* TEST */     
 	request.setCharacterEncoding("EUC-KR");
